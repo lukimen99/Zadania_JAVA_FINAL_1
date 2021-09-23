@@ -27,8 +27,9 @@ public class Main {
         Human me = new Human("Lukasz", "Sobolewski", "123456789", dog);
         me.pet.takeForAWalk();
         me.pet.feed();
-        me.auto = new Car("Mondeo", "Ford");
-        System.out.println(me.auto.model);
+        me.auto = new Car("Mondeo", "Ford", 50000.00);
+        me.setCar(me.auto);
+        System.out.println(me.getCar());
 
         me.getSalary();
         me.setSalary(5000);

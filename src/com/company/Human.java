@@ -32,4 +32,21 @@ public class Human {
         this.phone = phone;
         this.pet = pet;
     }
+
+    public Car getCar() {
+        return auto;
+    }
+
+    public void setCar(Car auto) {
+        if (salary > auto.value) {
+            this.auto = auto;
+            System.out.println("Samochód zakupiony");
+        } else if (salary > (auto.value) / 12) {
+            this.auto = auto;
+            System.out.println("Kupiłeś samochód na raty");
+        } else {
+            System.out.println("Idź na studia czy coś");
+        }
+
+    }
 }
