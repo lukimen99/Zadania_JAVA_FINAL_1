@@ -31,7 +31,7 @@ public class Main {
 
         System.out.println(me.getCar());
         me.setCar(ford);
-        System.out.println(me.getCar());
+
 
         me.getSalary();
         me.setSalary(5000);
