@@ -1,9 +1,9 @@
 package com.company;
-import devices.Car;
+import com.company.devices.Car;
 
 import java.time.LocalTime;
 
-public class Human {
+public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Animal pet;
@@ -29,6 +29,7 @@ public class Human {
     }
 
     public Human(String firstName, String lastName, String phone, Animal pet) {
+        super("homosapiens");
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
