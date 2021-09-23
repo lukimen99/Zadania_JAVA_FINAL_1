@@ -6,9 +6,11 @@ public class Car {
     public Double value;
 
 
-    public Car(String model, String producer, double v) {
+    public Car(String model, String producer, Double value) {
         this.model = model;
         this.producer = producer;
+        this.value = value;
+
     }
 }
 
