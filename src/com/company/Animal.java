@@ -50,5 +50,15 @@ public class Animal {
             System.out.println("I am dead human");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", weight=" + weight +
+                ", name='" + name + '\'' +
+                ", pic=" + pic +
+                '}';
+    }
 }
 

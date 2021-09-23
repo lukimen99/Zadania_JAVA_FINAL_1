@@ -1,4 +1,4 @@
-package com.company;
+package devices;
 
 public class Car {
     final private String producer;
@@ -11,6 +11,15 @@ public class Car {
         this.producer = producer;
         this.value = value;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", value=" + value +
+                '}';
     }
 }
 

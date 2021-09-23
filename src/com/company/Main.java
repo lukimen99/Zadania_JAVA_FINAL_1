@@ -1,5 +1,8 @@
 package com.company;
 
+import devices.Car;
+import devices.Phone;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -31,6 +34,11 @@ public class Main {
 
         System.out.println(me.getCar());
         me.setCar(ford);
+
+        Car car1 = new Car("mustang", "ford", 8000.0);
+        Car car2 = new Car("mustang", "ford", 8000.0);
+        System.out.println(car1);
+        System.out.println(car2);
 
 
         me.getSalary();
