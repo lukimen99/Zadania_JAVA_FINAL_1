@@ -29,5 +29,9 @@ public class Main {
         me.pet.feed();
         me.auto = new Car("Mondeo", "Ford");
         System.out.println(me.auto.model);
+
+        me.getSalary();
+        me.setSalary(5000);
+        me.getSalary();
     }
 }
