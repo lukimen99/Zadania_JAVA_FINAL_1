@@ -10,4 +10,8 @@ public class Car extends Device {
         this.value = value;
     }
 
+    public void turnOn(){
+        System.out.println("wlacz silnik");
+    }
 }
+

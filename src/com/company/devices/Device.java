@@ -1,4 +1,5 @@
 package com.company.devices;
+import com.company.devices.Device;
 
 public abstract class Device {
 
@@ -10,7 +11,13 @@ public abstract class Device {
         this.model = model;
         this.producer = producer;
         this.yearofproduction = yearofproduction;
+
     }
+
+    abstract public void turnOn();
+
+
+
 
     @Override
     public String toString() {
@@ -21,7 +28,5 @@ public abstract class Device {
                 '}';
     }
 
-    public void turnOn() {
-        System.out.println("Włączono urządzenie");
-    }
+
 }

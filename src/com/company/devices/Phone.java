@@ -10,4 +10,8 @@ public class Phone extends Device {
         this.operationSystem = operationSystem;
     }
 
+    public void turnOn(){
+        System.out.println("podaj odcisk palca");
+    }
 }
+
