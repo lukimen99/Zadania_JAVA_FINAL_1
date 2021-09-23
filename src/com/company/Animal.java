@@ -2,8 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
-    final public String species;
+public class Animal implements Sellable {
     public String name;
     public File pic;
     private Double weight;
@@ -15,17 +14,13 @@ public class Animal {
     static final public double DEFAULT_FOOD_WEIGHT=1.0;
 
     public Animal(String species) {
-        this.species = species;
 
-        switch (this.species) {
-            case "dog" -> this.weight = DOG_WEIGHT;
-            case "cat" -> this.weight = CAT_WEIGHT;
-            case "cow" -> this.weight = COW_WEIGHT;
-            default -> this.weight = ANIMAL_WEIGHT;
-        }
+
+
 
 
     }
+
 
 
     void feed() {
@@ -54,11 +49,25 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{" +
-                "species='" + species + '\'' +
                 ", weight=" + weight +
                 ", name='" + name + '\'' +
                 ", pic=" + pic +
                 '}';
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.pet != this) {
+            System.out.println(("Nie możesz sprzedać czegoś czego nie posiadasz"));
+        } else if (buyer.cash < price) {
+            System.out.println(("Nie masz tyle kaski"));
+        } else {
+            seller.cash += price;
+            buyer.cash -= price;
+            buyer.pet = seller.pet;
+            seller.pet = null;
+            System.out.println(("Tranzakcja udana" + this + " za " + price));
+        }
     }
 }
 

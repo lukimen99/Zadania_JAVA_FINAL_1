@@ -1,5 +1,6 @@
 package com.company;
 import com.company.devices.Car;
+import com.company.devices.Phone;
 
 import java.time.LocalTime;
 
@@ -7,9 +8,12 @@ public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Animal pet;
-    private Car auto;
-    protected String phone;
+    public Car auto;
+    public Phone phone;
+    public String phonenumber;
     private Double salary;
+    public double cash;
+
 
     public Double getSalary() {
         System.out.println(LocalTime.now());
@@ -28,7 +32,7 @@ public class Human extends Animal {
         }
     }
 
-    public Human(String firstName, String lastName, String phone, Animal pet) {
+    public Human(String firstName, String lastName) {
         super("homosapiens");
         this.firstName = firstName;
         this.lastName = lastName;
@@ -58,10 +62,12 @@ public class Human extends Animal {
         return "Human{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
+                ", phone='" + phonenumber + '\'' +
                 ", pet=" + pet +
                 ", auto=" + auto +
                 ", salary=" + salary +
                 '}';
     }
+
+
 }
