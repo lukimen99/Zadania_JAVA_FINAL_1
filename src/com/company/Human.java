@@ -1,19 +1,19 @@
 package com.company;
+import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 import java.time.LocalTime;
 
-public class Human extends Animal {
+public class Human {
     public String firstName;
     public String lastName;
     public Animal pet;
-    public Car auto;
-    public Phone phone;
+    public Car car;
     public String phonenumber;
+    public Phone phone;
     private Double salary;
-    public double cash;
-
+    public Double cash;
 
     public Double getSalary() {
         System.out.println(LocalTime.now());
@@ -32,29 +32,30 @@ public class Human extends Animal {
         }
     }
 
-    public Human(String firstName, String lastName) {
-        super("homosapiens");
+    public Human(String firstName, String lastName, String phonenumber, Animal pet) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phone = phone;
+        this.phonenumber = phonenumber;
         this.pet = pet;
     }
 
+//    public Human() {
+//
+//    }
+
     public Car getCar() {
-        return auto;
+        return car;
     }
 
-    public void setCar(Car auto) {
-        if (salary > auto.value) {
-            this.auto = auto;
+    public void setCar(Car car) {
+        if (getSalary() > car.value) {
             System.out.println("Samochód zakupiony");
-        } else if (salary > (auto.value) / 12) {
-            this.auto = auto;
+            this.car = car;
+        } else if (getSalary() > (car.value / 12)) {
             System.out.println("Kupiłeś samochód na raty");
-        } else {
+            this.car = car;
+        } else
             System.out.println("Idź na studia czy coś");
-        }
-
     }
 
     @Override
@@ -62,12 +63,10 @@ public class Human extends Animal {
         return "Human{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", phone='" + phonenumber + '\'' +
                 ", pet=" + pet +
-                ", auto=" + auto +
+                ", car=" + car +
+                ", phone='" + phonenumber + '\'' +
                 ", salary=" + salary +
                 '}';
     }
-
-
 }
