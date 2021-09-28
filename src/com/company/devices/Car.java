@@ -1,8 +1,8 @@
 package com.company.devices;
-
 import com.company.Human;
+import com.company.Sellable;
 
-public abstract class Car extends Device implements com.company.Salleable {
+public abstract class Car extends Device implements com.company.Sellable {
     public String color;
     public Double value;
 
@@ -13,24 +13,21 @@ public abstract class Car extends Device implements com.company.Salleable {
     }
 
     @Override
-    public void turnOn() {
-        System.out.println("Przekręcam kluczyk");
-    }
-
-    @Override
     public void sell(Human seller, Human buyer, Double price) {
-        if (seller.car != this) {
+        if (seller.auto != this) {
             System.out.println(("Nie możesz sprzedać jak nie masz"));
         } else if (buyer.cash < price) {
             System.out.println(("Nie masz tyle kaski"));
         } else {
             seller.cash += price;
             buyer.cash -= price;
-            buyer.car = seller.car;
-            seller.car = null;
-            System.out.println(("Transakcja udana, sprzedano " + this + " za " + price));
+            buyer.auto = seller.auto;
+            seller.auto = null;
+            System.out.println(("Transakcja udana" + this + " za " + price));
         }
+
+
     }
 
-    public abstract void refuel();
 }
+

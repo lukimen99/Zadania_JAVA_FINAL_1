@@ -1,19 +1,19 @@
 package com.company;
-import com.company.creatures.Animal;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
 import java.time.LocalTime;
 
-public class Human {
+public class Human extends Animal {
     public String firstName;
     public String lastName;
     public Animal pet;
-    public Car car;
-    public String phonenumber;
+    public Car auto;
     public Phone phone;
+    public String phonenumber;
     private Double salary;
-    public Double cash;
+    public double cash;
+
 
     public Double getSalary() {
         System.out.println(LocalTime.now());
@@ -32,30 +32,29 @@ public class Human {
         }
     }
 
-    public Human(String firstName, String lastName, String phonenumber, Animal pet) {
+    public Human(String firstName, String lastName) {
+        super("homosapiens");
         this.firstName = firstName;
         this.lastName = lastName;
-        this.phonenumber = phonenumber;
+        this.phone = phone;
         this.pet = pet;
     }
 
-//    public Human() {
-//
-//    }
-
     public Car getCar() {
-        return car;
+        return auto;
     }
 
-    public void setCar(Car car) {
-        if (getSalary() > car.value) {
+    public void setCar(Car auto) {
+        if (salary > auto.value) {
+            this.auto = auto;
             System.out.println("Samochód zakupiony");
-            this.car = car;
-        } else if (getSalary() > (car.value / 12)) {
+        } else if (salary > (auto.value) / 12) {
+            this.auto = auto;
             System.out.println("Kupiłeś samochód na raty");
-            this.car = car;
-        } else
+        } else {
             System.out.println("Idź na studia czy coś");
+        }
+
     }
 
     @Override
@@ -63,10 +62,12 @@ public class Human {
         return "Human{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", pet=" + pet +
-                ", car=" + car +
                 ", phone='" + phonenumber + '\'' +
+                ", pet=" + pet +
+                ", auto=" + auto +
                 ", salary=" + salary +
                 '}';
     }
+
+
 }
